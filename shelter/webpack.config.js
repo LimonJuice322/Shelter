@@ -24,6 +24,15 @@ module.exports = {
           },
         },
         {
+          test: /\.svg$/i,
+          use: {
+            loader: 'file-loader',
+            query: {
+              name: 'assets/icons/[name].[ext]'
+            }
+          }
+        },
+        {
           test: /\.html$/,
           use: ['html-loader']
         }

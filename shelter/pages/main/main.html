@@ -30,8 +30,8 @@
       </div>
     </header>
 
-    <main class="container">
-      <section class="friend">
+    <main>
+      <section class="friend container">
         <div class="friend__text-column">
           <h2 class="friend__header">Not only people need a house</h2>
           <p class="friend__description">
@@ -40,9 +40,62 @@
             He or she will love you more than anybody else in the world,
             you will see!
           </p>
-          <a class="friend__btn" href="#">Make a friend</a>
+          <a class="btn btn--friend" href="#">Make a friend</a>
         </div>
-        <img class="friend__img" src="/assets/img/not-only-dog.png" alt="Puppy" />
+        <img class="friend__img" src="/assets/img/not-only-dog.png" width="698" height="728" alt="Puppy">
+      </section>
+
+      <section class="about">
+        <div class="about__wrapper container">
+          <img class="about__img" src="/assets/img/about-pets.png" width="300" height="408" alt="Pets">
+          <div class="about__text">
+            <h2 class="about__header">About the shelter “Cozy House”</h2>
+            <p class="about__description">
+              Currently we have 121 dogs and 342 cats on our hands
+              and statistics show that only 20% of them will find a family.
+              The others will continue to live with us and will be waiting
+              for a lucky chance to become dearly loved.
+            </p>
+            <p class="about__description">
+              We feed our wards with the best food and make sure
+              that they do not get sick, feel comfortable (including psychologically) and well.
+              We are supported by 87 volunteers and 28 employees of various skill levels.
+              About 12% of the animals are taken by the shelter staff. Taking care of the animals,
+              they become attached to the pets and would hardly ever leave them alone.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-friends">
+        <div class="our-friends__wrapper container">
+          <h2 class="our-friends__header">
+            Our friends who<br>
+            are looking for a house
+          </h2>
+          <div class="slider">
+            <button class="slider__btn slider__btn--previous" type="button" aria-label="Previous item"></button>
+            <ul class="slider__list">
+              <li class="slider__item">
+                <img src="/assets/img/cat.png" alt="Cat">
+                <h3 class="slider__name">Katrine</h3>
+                <a class="btn btn--our-friends" href="#">Learn more</a>
+              </li>
+              <li class="slider__item">
+                <img src="/assets/img/dog-1.png" alt="Puppy">
+                <h3 class="slider__name">Jennifer</h3>
+                <a class="btn btn--our-friends" href="#">Learn more</a>
+              </li>
+              <li class="slider__item slider__item--current">
+                <img src="/assets/img/dog-2.png" alt="Dog">
+                <h3 class="slider__name">Woody</h3>
+                <a class="btn btn--our-friends" href="#">Learn more</a>
+              </li>
+            </ul>
+            <button class="slider__btn slider__btn--next" type="button" aria-label="Next item"></button>
+          </div>
+          <a class="btn" href="#">Get to know the rest</a>
+        </div>
       </section>
     </main>
   </body>
