@@ -16,3 +16,7 @@ import './assets/icons/icon-vitamins.svg';
 import './assets/icons/icon-medicines.svg';
 import './assets/img/donation-dog.png';
 import './assets/icons/credit-card.svg';
+import './assets/img/footer-puppy.png';
+import './assets/icons/icon-email.svg';
+import './assets/icons/icon-phone.svg';
+import './assets/icons/icon-marker.svg';
