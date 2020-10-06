@@ -147,7 +147,6 @@ img {
   padding-bottom: 60px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto;
   grid-row-gap: 30px;
   grid-column-gap: 40px;
 }
@@ -192,7 +191,6 @@ img {
   color: @basic-dark-xl;
   display: block;
   text-align: center;
-  padding-top: 13px;
   width: 52px;
   height: 52px;
   border: 2px solid @basic-sand;
@@ -205,7 +203,13 @@ img {
     border-color: @basic-sand-light;
   }
 
+  &:active {
+    border-color: @basic-sand;
+    background-color: @basic-sand;
+  }
+
   &:disabled {
+    color: @basic-grey;
     border-color: @basic-grey;
 
     &:hover {
