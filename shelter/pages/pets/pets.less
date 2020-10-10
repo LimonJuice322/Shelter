@@ -89,6 +89,7 @@ img {
 }
 
 .nav-menu__link {
+  padding-bottom: 3px;
   .set-font(@font-size: 0.94rem);
   color: @basic-dark-l;
 
@@ -97,6 +98,7 @@ img {
   }
 
   &--active {
+    padding-bottom: 0;
     color: @basic-dark-l;
     border-bottom: 3px solid @basic-sand;
   }
@@ -113,7 +115,7 @@ img {
   background-color: @basic-sand;
 
   &--our-friends {
-    padding: 13px 43px;
+    padding: 12px 43px;
     border: 2px solid @basic-sand;
     background-color: @basic-white;
 
@@ -196,6 +198,11 @@ img {
   border: 2px solid @basic-sand;
   border-radius: 100px;
   background-color: transparent;
+
+  &--current {
+    border-color: @basic-sand;
+    background-color: @basic-sand;
+  }
 
   &:hover {
     cursor: pointer;
