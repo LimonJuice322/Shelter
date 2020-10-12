@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Our pets</title>
   </head>
   <body>
@@ -12,6 +13,7 @@
           <span class="header__logo-subtitle">Shelter for pets in Boston</span>
         </div>
         <nav class="nav-menu">
+          <button  class="nav-menu__toggler" type="button" aria-label="Open/close menu"></button>
           <ul class="nav-menu__list">
             <li class="nav-menu__item">
               <a class="nav-menu__link" href="main.html">About the shelter</a>
@@ -31,70 +33,72 @@
     </header>
 
     <main>
-      <section class="our-friends container">
-        <h2 class="our-friends__header">
-          Our friends who<br>
-          are looking for a house
-        </h2>
-        <ul class="our-friends__list">
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-katrine.png" width="270" height="270" alt="Katrine">
-            <h3 class="our-friends__name">Katrine</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-jennifer.png" width="270" height="270" alt="Jennifer">
-            <h3 class="our-friends__name">Jennifer</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-woody.png" width="270" height="270" alt="Woody">
-            <h3 class="our-friends__name">Woody</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-sophia.png" width="270" height="270" alt="Sophia">
-            <h3 class="our-friends__name">Sophia</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-timmy.png" width="270" height="270" alt="Timmy">
-            <h3 class="our-friends__name">Timmy</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-charly.png" width="270" height="270" alt="Charly">
-            <h3 class="our-friends__name">Charly</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-scarlet.png" width="270" height="270" alt="Scarlett">
-            <h3 class="our-friends__name">Scarlett</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-          <li class="our-friends__item">
-            <img src="/assets/img/pets-freddie.png" width="270" height="270" alt="Freddie">
-            <h3 class="our-friends__name">Freddie</h3>
-            <a class="btn btn--our-friends" href="#">Learn more</a>
-          </li>
-        </ul>
-        <ul class="our-friends__pagination">
-          <li>
-            <button disabled type="button" class="our-friends__btn" href="#" aria-label="Pirst page"><<</button>
-          </li>
-          <li>
-            <button disabled type="button" class="our-friends__btn" href="#" aria-label="Previous page"><</button>
-          </li>
-          <li>
-            <button type="button" class="our-friends__btn our-friends__btn--current" href="#" aria-label="Current page">1</button>
-          </li>
-          <li>
-            <button type="button" class="our-friends__btn" href="#" aria-label="Next page">></button>
-          </li>
-          <li>
-            <button type="button" class="our-friends__btn" href="#" aria-label="Last page">>></button>
-          </li>
-        </ul>
+      <section class="our-friends">
+        <div class="container">
+          <h2 class="our-friends__header">
+            Our friends who<br>
+            are looking for a house
+          </h2>
+          <ul class="our-friends__list">
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-katrine.png" width="270" height="270" alt="Katrine">
+              <h3 class="our-friends__name">Katrine</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-jennifer.png" width="270" height="270" alt="Jennifer">
+              <h3 class="our-friends__name">Jennifer</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-woody.png" width="270" height="270" alt="Woody">
+              <h3 class="our-friends__name">Woody</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-sophia.png" width="270" height="270" alt="Sophia">
+              <h3 class="our-friends__name">Sophia</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-timmy.png" width="270" height="270" alt="Timmy">
+              <h3 class="our-friends__name">Timmy</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-charly.png" width="270" height="270" alt="Charly">
+              <h3 class="our-friends__name">Charly</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-scarlet.png" width="270" height="270" alt="Scarlett">
+              <h3 class="our-friends__name">Scarlett</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+            <li class="our-friends__item">
+              <img src="/assets/img/pets-freddie.png" width="270" height="270" alt="Freddie">
+              <h3 class="our-friends__name">Freddie</h3>
+              <a class="btn btn--our-friends" href="#">Learn more</a>
+            </li>
+          </ul>
+          <ul class="our-friends__pagination">
+            <li>
+              <button disabled type="button" class="our-friends__btn" href="#" aria-label="Pirst page"><<</button>
+            </li>
+            <li>
+              <button disabled type="button" class="our-friends__btn" href="#" aria-label="Previous page"><</button>
+            </li>
+            <li>
+              <button type="button" class="our-friends__btn our-friends__btn--current" href="#" aria-label="Current page">1</button>
+            </li>
+            <li>
+              <button type="button" class="our-friends__btn" href="#" aria-label="Next page">></button>
+            </li>
+            <li>
+              <button type="button" class="our-friends__btn" href="#" aria-label="Last page">>></button>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
 
