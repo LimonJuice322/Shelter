@@ -122,6 +122,7 @@ img {
 }
 
 .header__logo {
+  z-index: 3;
   margin-right: auto;
 }
 
@@ -149,6 +150,7 @@ img {
 }
 
 .nav-menu__toggler {
+  z-index: 3;
   display: none;
   position: relative;
   margin-right: 43px;
@@ -171,6 +173,11 @@ img {
 
   @media (min-width: 0) and (max-width: 767.5px) {
     display: block;
+    transition: transform 0.5s;
+
+    &--open {
+      transform: rotate(90deg);
+    }
   }
 }
 
@@ -181,7 +188,24 @@ img {
   list-style: none;
 
   @media (min-width: 0) and (max-width: 767.5px) {
-    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    outline: 2px dotted red;
+    padding-top: 248px;
+    padding-bottom: 248px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    flex-direction: column;
+    width: 0;
+    min-height: 100vh;
+    background-color: @basic-dark-xl;
+    transition: 0.5s;
+
+    &--show {
+      width: 320px;
+    }
   }
 }
 
@@ -189,6 +213,17 @@ img {
   display: flex;
   align-items: center;
   margin-left: 36px;
+
+  @media (min-width: 0) and (max-width: 767.5px) {
+    outline: 2px dotted blue;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+
+    + .nav-menu__item {
+      margin-top: 40px;
+    }
+  }
 }
 
 .nav-menu__link {
@@ -202,6 +237,12 @@ img {
   &--active {
     color: @basic-white-dark;
     border-bottom: 3px solid @basic-sand;
+  }
+
+  @media (min-width: 0) and (max-width: 767.5px) {
+    display: block;
+    width: 100%;
+    .set-font(2rem, 1.6em, 400);
   }
 }
 
