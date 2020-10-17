@@ -143,12 +143,12 @@ btns.forEach(btn => btn.addEventListener('click', function() {
 
 const nav_btn = document.querySelector('.nav-menu__toggler');
 const menu = document.querySelector('.nav-menu__list');
-nav_btn.addEventListener('click', function() {
-  if (nav_btn.classList.contains('nav-menu__toggler--open')) {
-    nav_btn.classList.remove('nav-menu__toggler--open');
-    menu.classList.remove('nav-menu__list--show');
-  } else {
-    nav_btn.classList.add('nav-menu__toggler--open');
-    menu.classList.add('nav-menu__list--show');
-  }
+document.addEventListener('click', function(evt) {
+      if (evt.target == nav_btn && !menu.classList.contains('nav-menu__list--show')) {
+        nav_btn.classList.toggle('nav-menu__toggler--open');
+        menu.classList.toggle('nav-menu__list--show');
+      } else if (menu.classList.contains('nav-menu__list--show') && !menu.contains(evt.target)) {
+        nav_btn.classList.toggle('nav-menu__toggler--open');
+        menu.classList.toggle('nav-menu__list--show');
+      }
 })
