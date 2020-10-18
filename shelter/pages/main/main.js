@@ -113,8 +113,55 @@ function get_current_indices(cards) {
   return current_indices;
 }
 
+function popup_over(evt) {
+  if (!popup_background.contains(evt.target)) popup_close.classList.add('btn-close--hover');
+  else if (popup_background.contains(evt.target)) popup_close.classList.remove('btn-close--hover');
+}
+
 const cards = document.querySelectorAll('.slider__item');
+const popup = document.querySelector('.popup');
+const popup_info = {
+  name: popup.querySelector('.popup__name'),
+  type: popup.querySelector('.popup__type'),
+  img: popup.querySelector('img'),
+  breed: popup.querySelector('.popup__breed'),
+  description: popup.querySelector('.popup__description'),
+  age: popup.querySelector('.popup__age'),
+  inoculations: popup.querySelector('.popup__inoculations'),
+  diseases: popup.querySelector('.popup__diseases'),
+  parasites: popup.querySelector('.popup__parasites')
+}
+const popup_close = document.querySelector('.btn-close');
+const popup_background = popup.querySelector('.popup__background');
 let current_indices = get_current_indices(cards);
+
+document.addEventListener('click', function(evt) {
+  if (evt.target.parentNode.classList.contains('slider__item') || evt.target.classList.contains('slider__item')) {
+    let current_name;
+    if (evt.target.parentNode.classList.contains('slider__item')) {
+      current_name = evt.target.parentNode.querySelector('.slider__name').innerHTML;
+    } else if (evt.target.classList.contains('slider__item')) {
+      current_name = evt.target.querySelector('.slider__name').innerHTML;
+    }
+    const current_index = data.indexOf(data.find(item => item["name"] == current_name));
+    const current_item = data[current_index];
+
+    for (let key of Object.keys(current_item)) {
+      if (key == 'img') {
+        popup_info[`${key}`].src = get_src(current_item["img"], current_item["name"]);
+        popup_info[`${key}`].alt = current_item["name"];
+      }
+      popup_info[`${key}`].innerHTML = current_item[`${key}`];
+    }
+
+    popup.classList.remove('popup--close');
+
+    document.addEventListener('mouseover', popup_over);
+  } else if (!popup.classList.contains('popup--close') && !popup.querySelector('.popup__background').contains(evt.target)) {
+    popup.classList.add('popup--close');
+    document.removeEventListener('mouseover', popup_over);
+  }
+})
 
 const btns = document.querySelectorAll('.slider__btn');
 btns.forEach(btn => btn.addEventListener('click', function() {
