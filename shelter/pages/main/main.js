@@ -1,6 +1,3 @@
-import './main.less';
-import './main.html';
-
 let pets = [
   {
     "name": "Jennifer",
@@ -93,24 +90,6 @@ let pets = [
 ];
 let fullPetsList = []; // 48
 
-fullPetsList = (() => {
-    let tempArr = [];
-
-    for (let i = 0; i < 6; i++) {
-      const newPets = pets;
-      for (let j = pets.length; j > 0; j--) {
-        let randIndex = Math.floor(Math.random() * j);
-        const randElem = newPets.splice(randIndex, 1)[0];
-        newPets.push(randElem);
-      }
-      tempArr = [...tempArr, ...newPets];
-    }
-
-    return tempArr;
-  })();
-
-  fullPetsList = sort863(fullPetsList);
-
 const sort863 = (list) => {
   list = sort6recursively(list);
 
@@ -142,6 +121,24 @@ const sort6recursively = (list) => {
   return list
 }
 
+fullPetsList = (() => {
+    let tempArr = [];
+
+    for (let i = 0; i < 6; i++) {
+      const newPets = pets;
+      for (let j = pets.length; j > 0; j--) {
+        let randIndex = Math.floor(Math.random() * j);
+        const randElem = newPets.splice(randIndex, 1)[0];
+        newPets.push(randElem);
+      }
+      tempArr = [...tempArr, ...newPets];
+    }
+
+    return tempArr;
+  })();
+
+  fullPetsList = sort863(fullPetsList);
+
   function get_src(src, name) {
     let low_name = name.toLowerCase();
     let new_src = src.replace(low_name, `pets-${low_name}`).replace('images', 'img');
@@ -156,7 +153,7 @@ const sort6recursively = (list) => {
       let low_name = card.name.toLowerCase();
       slider.insertAdjacentHTML('beforeend', `
           <li class="slider__item">
-            <img src="/assets/img/pets-${low_name}.png" width="270" height="270" alt="${card.name}">
+            <img src="../../assets/img/pets-${low_name}.png" width="270" height="270" alt="${card.name}">
             <h3 class="slider__name">${card.name}</h3>
             <a class="btn btn--our-friends" href="#">Learn more</a>
           </li>`)
