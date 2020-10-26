@@ -899,23 +899,14 @@ img {
 .popup {
   font-family: "Georgia", serif;
   z-index: 4;
-  width: 952px;
+  width: 100vw;
+  height: 100vh;
   padding-top: 52px;
   padding-right: 52px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   background-color: transparent;
-
-  @media (min-width: @tablet-width) and (max-width: 1279.5px) {
-    width: 630px;
-  }
-
-  @media (min-width: 0) and (max-width: 767.5px) {
-    padding-right: 30px;
-    width: 240px;
-  }
 
   img {
     width: 500px;
@@ -939,6 +930,22 @@ img {
   }
 }
 
+.popup__wrapper {
+  position: absolute;
+  width: 952px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: @tablet-width) and (max-width: 1279.5px) {
+    width: 630px;
+  }
+
+  @media (min-width: 0) and (max-width: 767.5px) {
+    width: 240px;
+  }
+}
+
 .popup__background {
   display: flex;
   border-radius: 9px;
@@ -952,8 +959,8 @@ img {
 
 .btn-close {
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: -52px;
+  right: -41px;
   padding: 0;
   width: 52px;
   height: 52px;
@@ -969,6 +976,10 @@ img {
   &:hover {
     cursor: pointer;
     border-color: @basic-sand-light;
+  }
+
+  @media(min-width: 0) and (max-width: 767.5px) {
+    right: -29px;
   }
 }
 

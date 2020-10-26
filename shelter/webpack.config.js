@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -18,7 +19,7 @@ module.exports = {
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
         },
         {
-          test: /\.(png|jpg)$/i,
+          test: /\.(png|jpg|json)$/i,
           use: {
             loader: 'file-loader',
             query: {
@@ -46,16 +47,21 @@ module.exports = {
         filename: '[name].css',
         chunkFilename: '[id].css'
       }),
+      new CopyPlugin({
+      patterns: [
+        { from: 'assets', to: 'assets', context: './' },
+      ],
+    }),
       new HtmlWebpackPlugin({
           template: __dirname + "/pages/main/main.html",
           chunks: ['main'],
-          filename: './main.html',
+          filename: './pages/main/main.html',
           inject: 'body'
       }),
       new HtmlWebpackPlugin({
           template: __dirname + "/pages/pets/pets.html",
           chunks: ['pets'],
-          filename: './pets.html',
+          filename: './pages/pets/pets.html',
           inject: 'body'
       })
   ],
